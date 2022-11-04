@@ -1,2 +1,2 @@
 # CucumberBDD
-# The way in learning of BDD framework 
+# I am in the way of learning the BDD framework with cucumber using selenium :) 
