@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Pages.HomePage;
 import Pages.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -14,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class LoginSteps_POM {
     WebDriver driver;
     LoginPage login ;
+    HomePage homePage;
 
 
     @Given("browser is launched")
@@ -22,6 +24,8 @@ public class LoginSteps_POM {
         System.setProperty("webdriver.chrome.driver","./Drivers/chromedriver.exe");
         driver = new ChromeDriver();
         login = new LoginPage(driver);
+        homePage = new HomePage(driver);
+
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
@@ -49,7 +53,7 @@ public class LoginSteps_POM {
     @Then("user is navigated to home page")
     public void user_is_navigated_to_home_page() {
 
-        if(login.checkLogOutIsDisplayed()){
+        if(homePage.checkLogOutIsDisplayed()){
             System.out.println("login is successful");
         }
         else{

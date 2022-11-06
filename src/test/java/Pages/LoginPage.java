@@ -10,7 +10,6 @@ public class LoginPage {
     private By txt_username = By.xpath("//input[@id='name']");
     private  By txt_password = By.xpath("//input[@id='password']");
     private By btn_login = By.xpath("//button[@id='login']");
-    private By btn_logout = By.id("logout");
 
     public LoginPage(WebDriver driver){this.driver = driver;
     }
@@ -21,6 +20,6 @@ public class LoginPage {
 
     public void clickLoginButton(){driver.findElement(btn_login).click();}
 
-    public boolean checkLogOutIsDisplayed(){return driver.findElement(btn_logout).isDisplayed();}
+
 
 }
